@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Movie Madness</title>
 </head>
 <body>
 <form action="success.html" method="post">
@@ -21,7 +21,26 @@
     <label>Password:</label>
     <input type="password" name="password">
   </div>
-  <button type="submit">Log in</button>
+
+  <textarea name="comment" form="usrform">Enter comment here...</textarea>
+
+  <fieldset>
+  <legend> Favorite Actor/Actress </legend>
+  <p><label> <input type=radio name="Person" value="Jim Carey"> Jim Carey </label></p>
+  <p><label> <input type=radio name="Person" value="Brad Pit"> Brad Pit </label></p>
+  <p><label> <input type=radio name="Person" value="Jennifer Lawernce"> Jennifer Lawernce </label></p>
+  </fieldset>
+
+<fieldset>
+  <legend> Favorite Directors </legend>
+  <p><label> <input type=checkbox name="Director" value="Steven Speilberg"> Steven Speilberg </label></p>
+  <p><label> <input type=checkbox name="Director" value="James Cameron"> James Cameron </label></p>
+  <p><label> <input type=checkbox name="Director" value="Quentin Tarantino"> Quentin Tarantino </label></p>
+  </fieldset>
+
+  <fieldset>
+  <button type="submit">Submit</button>
+  </fieldset>
 </form>
 </body>
 </html>
