@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Madness</title>
+</head>
+<body>
+<form action="success.html" method="post">
+  <div>
+    <label>Email:</label>
+    <input type="email" name="email">
+  </div>
+  <div>
+      <label>Type of Movie</label>
+      <select name="Movie_Genre">
+        <option value="Genre">Comedy</option>
+        <option value="Genre">Horror</option>
+        <option value="Genre">Action</option>
+      </select>
+    </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password">
+  </div>
+
+  <textarea name="comment" form="usrform">Enter comment here...</textarea>
+
+  <fieldset>
+  <legend> Favorite Actor/Actress </legend>
+  <p><label> <input type=radio name="Person" value="Jim Carey"> Jim Carey </label></p>
+  <p><label> <input type=radio name="Person" value="Brad Pit"> Brad Pit </label></p>
+  <p><label> <input type=radio name="Person" value="Jennifer Lawernce"> Jennifer Lawernce </label></p>
+  </fieldset>
+
+<fieldset>
+  <legend> Favorite Directors </legend>
+  <p><label> <input type=checkbox name="Director" value="Steven Speilberg"> Steven Speilberg </label></p>
+  <p><label> <input type=checkbox name="Director" value="James Cameron"> James Cameron </label></p>
+  <p><label> <input type=checkbox name="Director" value="Quentin Tarantino"> Quentin Tarantino </label></p>
+  </fieldset>
+
+  <fieldset>
+  <button type="submit">Submit</button>
+  </fieldset>
+</form>
+</body>
+</html>
