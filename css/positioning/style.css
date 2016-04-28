@@ -1,5 +1,11 @@
 #octopus  {
-    position: fixed;
+    position: relative;
     margin: 250px 500px;
     z-index: -1;
+}
+
+#hat {
+	position: absolute;
+	left: 493px;
+	top: 168px;
 }
