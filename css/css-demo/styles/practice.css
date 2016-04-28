@@ -1,0 +1,32 @@
+#contact-info  {
+  font-size: .8em;
+}
+
+
+
+.job {
+  background-color: #e9e5dc;
+  padding: 20px 30px;
+  margin-top: 30px auto;
+  max-width: 960px;
+  font-size: 1.2em;
+  font-style: "Helvetica";
+}
+
+.smaller {
+font-size:.8em;
+}
+
+
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:hover {
+    color: hotpink;
+}
+
+
+ul li {background-color: green;
+}
