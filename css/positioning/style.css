@@ -1,0 +1,5 @@
+#octopus  {
+    position: fixed;
+    margin: 250px 500px;
+    z-index: -1;
+}
