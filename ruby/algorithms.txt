@@ -1,0 +1,6 @@
+- Start from the top left button
+- Until the first digit is correct:
+    - Move down 1 row,
+- Until the second digit is correct:
+	- Move right 1 column.
+- Press the button
