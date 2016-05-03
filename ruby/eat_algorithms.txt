@@ -1,0 +1,15 @@
+- Until your plate is empty or you are full:
+	
+	- If solid food is too big to fit in your mouth:
+		- Use fork and knife to cut it into smaller pieces. Then place smaller piece into mouth with fork.
+	- Else If the food is bite size:
+		- Use fork to place food into the mouth.
+	- Else, use spoon to place food into the mouth.
+
+	- Use lips to remove food from utencil as the utencil leaves your mouth.
+
+	- Chew your food until each food can safely be swallowed.
+
+	-Swallow your food.
+
+- Stop Eating. You are done.
