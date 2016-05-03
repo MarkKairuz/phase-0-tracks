@@ -1,3 +1,14 @@
+/*
+3.4 Manditory Pairing Responsive Design
+Will Friebel
+Mark Kairuz
+ */
+
+body {
+  max-width: 960px;
+  margin: auto;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -7,6 +18,20 @@ blockquote {
 cite {
   display: block;
   margin-top: 10px;
+}
+
+main {
+  width: 79%;
+  display: inline-block;
+  vertical-align: top;
+  padding: .2%;
+}
+
+#external-links {
+  width: 19%;
+  display: inline-block;
+  vertical-align: top;
+  padding: .2%;
 }
 
 #external-links ul {
@@ -30,3 +55,39 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 848px) {
+  main {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  #external-links {
+    display: block;
+    margin: auto;
+    min-width: 230px;
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 287px) {
+  main {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  #external-links {
+   display: block;
+   margin: auto;
+   text-align: center;
+  }
+
+  body {
+    font-size: 80%;
+    min-width: 230px;
+  }
+}
+
