@@ -8,9 +8,13 @@ puts "Is the hamster a good candidate for adoption?"
 Adoption = gets.chomp
 puts "What is the estimated age of the hamster?"
 Age = gets.chomp
+
 if Age == ""
 	Age = nil
+	puts "#{Name} has a loudness of #{Loud} at an unknown age."
+else
+	puts "#{Name} has a loudness of #{Loud} at the age of #{Age}."
 end
 
-puts "#{Name} has a loudness of #{Loud} at the age of #{Age}. #{Name}'s beautiful fur color of #{Color} is amazing."
+puts "#{Name}'s beautiful fur color of #{Color} is amazing."
 puts "We asked if #{Name} is a good candidate for adoption and you said #{Adoption}."
