@@ -11,17 +11,17 @@ Health_Insurance = gets.chomp
 
 if ( Name == "Drake Cula" ) || ( Name == "Tu Fang" )
 	puts "Definitely a vampire."
-else
-	if ( 2016 - Year_Born.to_i != Age.to_i )
+elsif ( 2016 - Year_Born.to_i != Age.to_i )
 		if ( !Garlic_Bread || !Health_Insurance )
 			puts "Probably a vampire."
 		elsif  ( !Garlic_Bread && !Health_Insurance )
 			puts "Almost certainly a vampire."
 		else
 			puts "Results inconclusive."
+		end
 	elsif ( 2016 - Year_Born.to_i == Age.to_i ) && ( Garlic_Bread || Health_Insurance )
 		puts "Probably not a vampire."
-end
-
+	end
 else
 	puts "Results inconclusive."
+end
