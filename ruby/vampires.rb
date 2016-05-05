@@ -19,3 +19,4 @@ elsif ( Name == "Drake Cula" ) || ( Name == "Tu Fang" )
 	puts "Definitely a vampire."
 else
 	puts "Results inconclusive."
+end
