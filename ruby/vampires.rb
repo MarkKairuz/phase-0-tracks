@@ -19,9 +19,8 @@ elsif ( 2016 - Year_Born.to_i != Age.to_i )
 		else
 			puts "Results inconclusive."
 		end
-	elsif ( 2016 - Year_Born.to_i == Age.to_i ) && ( Garlic_Bread || Health_Insurance )
+elsif ( 2016 - Year_Born.to_i == Age.to_i ) && ( Garlic_Bread || Health_Insurance )
 		puts "Probably not a vampire."
-	end
 else
 	puts "Results inconclusive."
 end
