@@ -9,14 +9,19 @@ Garlic_Bread = gets.chomp
 puts "Would you like to enroll in the company's health insurance?"
 Health_Insurance = gets.chomp
 
-if ( 2016 - Year_Born == Age ) && ( Garlic_Bread || Health_Insurance )
-	puts "Probably not a vampire."
-elsif !( 2016 - Year_Born == Age ) && ( !Garlic_Bread || !Health_Insurance )
-	puts "Probably a vampire."
-elsif !( 2016 - Year_Born == Age ) && ( !Garlic_Bread && !Health_Insurance )
-	puts "Almost certainly a vampire."
-elsif ( Name == "Drake Cula" ) || ( Name == "Tu Fang" )
+if ( Name == "Drake Cula" ) || ( Name == "Tu Fang" )
 	puts "Definitely a vampire."
 else
-	puts "Results inconclusive."
+	if ( 2016 - Year_Born.to_i != Age.to_i )
+		if ( !Garlic_Bread || !Health_Insurance )
+			puts "Probably a vampire."
+		elsif  ( !Garlic_Bread && !Health_Insurance )
+			puts "Almost certainly a vampire."
+		else
+			puts "Results inconclusive."
+	elsif ( 2016 - Year_Born.to_i == Age.to_i ) && ( Garlic_Bread || Health_Insurance )
+		puts "Probably not a vampire."
 end
+
+else
+	puts "Results inconclusive."
