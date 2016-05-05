@@ -1,4 +1,7 @@
+# Interview for a Vampire
+# Written by Mark Kairuz
 
+# Prompt User for information
 puts "What is your name?"
 Name = gets.chomp
 puts "How old are you?"
@@ -10,7 +13,7 @@ Garlic_Bread = gets.chomp
 puts "Would you like to enroll in the company's health insurance?"
 Health_Insurance = gets.chomp
 
-
+# Boolean case for Garlic
 Garlic = case Garlic_Bread
 	when 0 then false
 	when 1 then true
@@ -21,6 +24,7 @@ Garlic = case Garlic_Bread
 	else nil
 end
 
+# Boolean case for Health
 Health = case Health_Insurance
 	when 0 then false
 	when 1 then true
@@ -31,6 +35,7 @@ Health = case Health_Insurance
 	else nil
 end
 
+# Detection logic
 if ( Name == "Drake Cula" ) || ( Name == "Tu Fang" )
 	puts "Definitely a vampire."
 elsif ( 2016 - Year_Born != Age ) && !Garlic && !Health
