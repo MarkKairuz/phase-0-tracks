@@ -18,6 +18,14 @@ while num > 0 do
 	Garlic_Bread = gets.chomp
 	puts "Would you like to enroll in the company's health insurance?"
 	Health_Insurance = gets.chomp
+	Allergies = nil
+	puts "Do you have any allergies? Please type in each one individually and type done when finished. If you do not have allergies, just type in done."
+	while Allergies != "done" do
+		Allergies = gets.chomp
+		if Allergies == "sunshine"
+			puts "Probably a vampire"
+		end
+	end
 
 # Boolean case for Garlic
 	Garlic = case Garlic_Bread
