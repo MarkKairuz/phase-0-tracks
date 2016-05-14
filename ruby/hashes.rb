@@ -20,9 +20,9 @@ applicant[:theme] = gets.chomp
 puts "Does the applicant live in King County?"
 #  Make into Boolean
 King_County = gets.chomp
-if King_County.downcase == (true || "yes" || 1)
+if (King_County.downcase == true) || (King_County.downcase == "yes") || (King_County.downcase == 1)
 	applicant [:Lives_in_King_County] = true
-elsif King_County.downcase == (false || "no" || 0)
+elsif (King_County.downcase == false) || (King_County.downcase == "no") || (King_County.downcase == 0)
 	applicant [:Lives_in_King_County] = false
 else
 	applicant [:Lives_in_King_County] = "unknown"
@@ -34,7 +34,7 @@ puts applicant # prints applicant total info.
 # Ask if there is nay changes needed.
 puts "Need to make any changes? Type the category. Type none if everything is correct."
 Change = gets.chomp
-if Change == "none"
+if Change.downcase == "none"
 	puts "No changes made."
 	puts applicant # prints applicant total info.
 else
