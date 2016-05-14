@@ -22,7 +22,7 @@ end
 p insert_the_character(1, "o")
 p insert_the_character(2, "o")
 # insert("zom", insert_location, insert_letter) => “zoom”
-
+puts
 
 p "enhance".center(15)
 # center("enhance", 15) => "    enhance    "
@@ -37,31 +37,44 @@ puts
 def combined_sentence(code)
 	if code == "ljust"
 		"the usual".ljust(18, " suspects")
-		# ljust("the usual", 18, " suspects") => "the usual suspects"
 	elsif code == "rjust"
 		" suspects".rjust(18, "the usual")
-		# rjust(" suspects", 18, "the usual") => "the usual suspects"
 	elsif code == "combine"
 		sentence = "the usual" << " suspects"
-		# sentence("the usual", " suspects") => "the usual suspects"
 	end
 end
 p combined_sentence("ljust")	# using ljust method.
+# ljust("the usual", 18, " suspects") => "the usual suspects"
 p combined_sentence("rjust")	# using rjust method.
+# rjust(" suspects", 18, "the usual") => "the usual suspects"
 p combined_sentence("combine")	# using a concatination method.
+# <<("the usual", " suspects") => "the usual suspects"
 puts
 
 
-def string_dot_section (word, string_start, string_end)
-	word (string_start..string_end)
+def string_dot_section(word, string_start, string_end)
+	word[string_start..string_end]
 end
+
+def string_comma_section(word, start, ending)
+	word[start, ending]
+end
+
 p "The case of the disappearing last letter".chop
 # chop("The case of the disappearing last letter") => "The case of the disappearing last lette"
+p string_dot_section("The case of the disappearing last letter",0,38)
+# [..]("The case of the disappearing last letter") => "The case of the disappearing last lette"
+p string_comma_section("The case of the disappearing last letter",0,39)
+# [,]("The case of the disappearing last letter") => "The case of the disappearing last lette"
 puts
 
 
 p "The mystery of the missing first letter".slice!(1..38)
 # slice("The mystery of the missing first letter", 1..38) => "he mystery of the missing first letter"
+p string_dot_section("The mystery of the missing first letter",1,38)
+# [..]("The mystery of the missing first letter") => "he mystery of the missing first letter"
+p string_comma_section("The mystery of the missing first letter",1,39)
+# [,]("The mystery of the missing first letter") => "he mystery of the missing first letter"
 puts
 
 
@@ -78,5 +91,3 @@ puts
 
 p "How many times does the letter 'a' appear in this string?".count "a"
 # count("How many times does the letter 'a' appear in this string?", "a") => 4
-puts
-
