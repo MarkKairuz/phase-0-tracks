@@ -4,36 +4,46 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-"iNvEsTiGaTiOn".swapcase
+p "iNvEsTiGaTiOn".swapcase
 # swapcase("iNvEsTiGaTiOn") => “InVeStIgAtIoN”
 
-"zom".insert( 1, "o" )
+def insert_the_character (insert_num, insert_letter)
+	"zom".insert(insert_num, insert_letter)
+end
+# "zom".insert( 1, "o" ) as a method on it's own without calling
+# Call methods
+p insert_the_character(1, "o")
+p insert_the_character(2, "o")
 # insert("zom", 1, "o") => “zoom”
 
-"enhance".center(15)
+p "enhance".center(15)
 # center("enhance", 15) => "    enhance    "
 
-"Stop! You’re under arrest!".upcase
+p "Stop! You’re under arrest!".upcase
 # upcase("Stop! You’re under arrest!") => "STOP! YOU’RE UNDER ARREST!"
 
-"the usual".ljust(18, " suspects")
+p "the usual".ljust(18, " suspects")
 # ljust("the usual", 18, " suspects") => "the usual suspects"
 
-" suspects".rjust(18, "the usual")
+p " suspects".rjust(18, "the usual")
 # rjust(" suspects", 18, "the usual") => "the usual suspects"
 
-"The case of the disappearing last letter".chop
+p "The case of the disappearing last letter".chop
 # chop("The case of the disappearing last letter") => "The case of the disappearing last lette"
 
-"The mystery of the missing first letter".slice!(1..38)
+p "The mystery of the missing first letter".slice!(1..38)
 # slice("The mystery of the missing first letter", 1..38) => "he mystery of the missing first letter"
 
-"Elementary,    my   dear        Watson!".squeeze
+p "Elementary,    my   dear        Watson!".squeeze
 # squeeze(Elementary,    my   dear        Watson!) => "Elementary, my dear Watson!"
 
-"z".ord
+p "z".ord
 # ord("z") => 122 
 # (What is the significance of the number 122 in relation to the character z?)
 
-"How many times does the letter 'a' appear in this string?".count "a"
+p "How many times does the letter 'a' appear in this string?".count "a"
 # count("How many times does the letter 'a' appear in this string?", "a") => 4
+
+
+
+
