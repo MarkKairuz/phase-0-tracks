@@ -56,5 +56,4 @@ Highway_405 = {
 puts "#{Highway_405[:sports_car][:contains][0]} is revving his #{Highway_405[:sports_car][:car_info][:engine]} engine."
 puts "The #{Highway_405[:delivery_truck][:type]} needs to deliver the #{Highway_405[:delivery_truck][:contains][1]}."
 puts "#{Highway_405[:mini_van][:contains][0]} needs to drop off the kids with her shiny new #{Highway_405[:mini_van][:car_info][:color]} #{Highway_405[:mini_van][:type]}."
-
-
+puts "#{Highway_405[:mini_van][:contains][2]} spells her name backwards as #{Highway_405[:mini_van][:contains][2].reverse.capitalize}"
