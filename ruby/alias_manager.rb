@@ -4,9 +4,11 @@
 # 	For Example: Billy Bob Joe.
 # 	Also, keep note of your name because there is a self-destruct sequence in the end.
 
-# Declare and empty hash
-name_hash = {}
+# Declare and empty array
+name_array = []
+
 # Request for a name or quit
+puts "" # blank line
 puts "Type in a name or type 'quit' to exit."
 name = gets.chomp
 
@@ -34,7 +36,8 @@ while name.downcase != 'quit' do
 	new_name = name_swap.join(' ')
 
 	# Add to the hash of names
-	name_hash[name] = new_name
+	name_array << name
+	name_array << new_name
 
 	# Print the new name
 	p "Your code name is now #{new_name}."
@@ -46,10 +49,16 @@ while name.downcase != 'quit' do
 	name = gets.chomp
 end
 
-# 
-#number_of_names = name_hash.legth
-#number_of_names.times { |x| puts name_hash}
-
+# Initiate count and name numbers for until loop
+count = 0
+number_of_names = name_array.length
+puts "" # blank line
+# Print the results
+until number_of_names <= 0
+	puts "'#{name_array[count]}' is also known as '#{name_array[count+1]}'"
+	count +=2
+	number_of_names -= 2
+end
 
 puts "" # blank line
 puts "Good luck, Agent! This message will self-destruct in 10 seconds"
