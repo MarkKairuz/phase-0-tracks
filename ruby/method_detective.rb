@@ -78,6 +78,7 @@ p string_comma_section("The mystery of the missing first letter",1,39)
 puts
 
 
+p "Elementary,    my   dear        Watson!".squeeze(" ")
 p "Elementary,    my   dear        Watson!".squeeze
 # squeeze(Elementary,    my   dear        Watson!) => "Elementary, my dear Watson!"
 puts
