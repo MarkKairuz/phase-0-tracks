@@ -16,6 +16,7 @@ while name.downcase != 'quit' do
 
 	# Swap the split first and last name
 	name_swap.reverse!
+	p name_swap.length
 	name_swap[0].capitalize! # Capitalize the new first name.
 	name_swap[1].capitalize! # Capitalize the new last name.
 
@@ -23,12 +24,15 @@ while name.downcase != 'quit' do
 	new_name = name_swap.join(' ')
 
 	# Print the new name
-	p new_name
-	#sleep(10)
+	p "Your code name is now #{new_name}."
+
+	puts "" # Leaves a blank line.
 
 	# Request a name or quit for the next session.
-	puts "Type in a name or type 'quit' to exit."
+	puts "Type another name or type 'quit' to exit."
 	name = gets.chomp
 end
 
-puts "Good luck, Agent!"
+puts "Good luck, Agent! This message will self distruct in 10 seconds"
+sleep(10) # 10 seconds pause.
+puts "\e[2J\e[f" # Code for clearing the screen.
