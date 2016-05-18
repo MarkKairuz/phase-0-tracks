@@ -2,11 +2,11 @@
 # Puppy
 
 # CHARACTERISTICS ----------------
-# Eyelash length: varies
+# Fur length: varies
 # Friendly: yes
-# Floppy ears: varies
-# Name: varies
-# Fur color: varies
+# Floppy ears: yes
+# Name: Bob
+# Fur color: brown
 # Estimated lifespan: 25
 
 # BEHAVIOR -----------------------
