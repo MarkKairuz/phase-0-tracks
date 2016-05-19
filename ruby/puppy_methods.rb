@@ -1,3 +1,5 @@
+# I paired with Max Greschl
+
 class Puppy
 
   def fetch(toy)
@@ -67,19 +69,19 @@ class Computer
 end
     
 
-# fido = Puppy.new
-# fido.fetch("bone")
-# fido.speak(5)
-# fido.roll_over
-# fido.dog_years(5)
-# fido.shake("left")
+fido = Puppy.new
+fido.fetch("bone")
+fido.speak(5)
+fido.roll_over
+fido.dog_years(5)
+fido.shake("left")
 
-# puts ""
-# puts "-------------------------"
-# puts ""
-# desktop = Computer.new
-# desktop.screen("true")
-# desktop.login("King Bob")
+puts ""
+puts "-------------------------"
+puts ""
+desktop = Computer.new
+desktop.screen("true")
+desktop.login("King Bob")
 
 computers = []
 50.times do
