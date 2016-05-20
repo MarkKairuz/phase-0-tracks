@@ -1,3 +1,6 @@
+# Mark Kairuz
+# GPS 2.2 with Maria
+
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
@@ -86,3 +89,19 @@ list4 = number_change(list3)
 puts "**************************************************"
 puts "Updated Grocery List"
 list4.each {|key, data| puts "#{key}: #{data}"}
+
+# I learned that pseudocode is excellent for reference when it comes to keeping 
+# track of where you are at and what you are doing.
+
+# I've noticed that arrays are more simple to deal with, but hashes have more
+# complex capabilities by having keys to the values.
+
+# It seems methods return the last value in that method.
+
+# You can pass integers, arrays, hashes, strings and other things as arguments.
+
+# You can pass information between methods by calling other methods within that
+# method.
+
+# I can now understand methods better. I think I still need to work on what hashes
+# can do and how to do them.
