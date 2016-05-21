@@ -4,7 +4,6 @@
 
 # Define Santa Class
 class Santa
-
 	# Initialize Santa
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
@@ -16,7 +15,7 @@ class Santa
 
 	# Speak Santa
 	def speak
-		puts the "The #{@gender} #{@ethnicity} says:"
+		puts "The #{@gender} #{@ethnicity} santa says:"
 		puts "Ho, ho, ho! Haaaappy holidays!"
 	end
 
@@ -25,25 +24,32 @@ class Santa
 		puts "That was a good #{cookie_type}!"
 	end
 
+	# Getter methods
+	def age
+		@age
+	end
+
+	def reindeer_ranking
+		@reindeer_ranking
+	end
+
+	# Setter methods
+	def celebrate_birthday=(new_age)
+		@age = new_age
+	end
+
+
+	def get_mad_at=(bad_reindeer)
+		@reindeer_ranking.delete(bad_reindeer)
+		@reindeer_ranking << bad_reindeer
+	end
+
 end
 
-# Subliminal request for initiating whether to loop or finalize the code.
-puts "What is the gender of this Santa? If there is no santa in the world, then enter 'done'."
-gender_option = gets.chomp
-
-# Loop attempts
-while gender_option.downcase != "done"
-	puts "What is the Ethnic background of this Santa?"
-	ethnic_background = gets.chomp
-
-	# Drive
-	Red_Squadron_Santa = Santa.new(gender_option, ethnic_background)
-	Red_Squadron_Santa.speak
-	Red_Squadron_Santa.eat_milk_and_cookies("Oreo")
-
-	puts "What is the gender of this next Santa? If there is no more santa left, then enter 'done'."
-	gender_option = gets.chomp
-end
+# # Drive
+# Red_Squadron_Santa = Santa.new
+# Red_Squadron_Santa.speak
+# Red_Squadron_Santa.eat_milk_and_cookies("Oreo")
 
 # # Test the code
 # santas = []
@@ -54,7 +60,9 @@ end
 # santas << Santa.new("female", "prefer not to say")
 # santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 # santas << Santa.new("N/A", "N/A")
-# p santas
+# # p santas
+
+santas = Santa.new("sit", "uck")
 
 # santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
@@ -63,3 +71,20 @@ end
 #   santas << Santa.new(example_genders[i], example_ethnicities[i])
 # end
 # p santas
+
+
+puts ""
+puts "----------------------"
+puts "Here comes the Santas:"
+puts ""
+# santas.each do |one_santa|
+#   one_santa.speak
+#   one_santa.eat_milk_and_cookies("chocolate_chip_cookie")
+#   puts ""
+# end
+
+santas.celebrate_birthday = 1
+santas.get_mad_at = "Vixen"
+p santas
+
+
