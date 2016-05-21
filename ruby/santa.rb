@@ -25,8 +25,8 @@ class Santa
 	end
 
 	# Getter methods
-	def age
-		@age
+	def celebrate_birthday
+		@age += 1
 	end
 
 	def reindeer_ranking
@@ -34,7 +34,7 @@ class Santa
 	end
 
 	# Setter methods
-	def celebrate_birthday=(new_age)
+	def change_age=(new_age)
 		@age = new_age
 	end
 
@@ -51,18 +51,18 @@ end
 # Red_Squadron_Santa.speak
 # Red_Squadron_Santa.eat_milk_and_cookies("Oreo")
 
-# # Test the code
-# santas = []
-# santas << Santa.new("agender", "black")
-# santas << Santa.new("female", "Latino")
-# santas << Santa.new("bigender", "white")
-# santas << Santa.new("male", "Japanese")
-# santas << Santa.new("female", "prefer not to say")
-# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-# santas << Santa.new("N/A", "N/A")
+# Test the code
+santas = []
+santas << Santa.new("agender", "black")
+santas << Santa.new("female", "Latino")
+santas << Santa.new("bigender", "white")
+santas << Santa.new("male", "Japanese")
+santas << Santa.new("female", "prefer not to say")
+santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+santas << Santa.new("N/A", "N/A")
 # # p santas
 
-santas = Santa.new("sit", "uck")
+# santas = Santa.new("male", "mixed")
 
 # santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
@@ -77,14 +77,16 @@ puts ""
 puts "----------------------"
 puts "Here comes the Santas:"
 puts ""
-# santas.each do |one_santa|
-#   one_santa.speak
-#   one_santa.eat_milk_and_cookies("chocolate_chip_cookie")
-#   puts ""
-# end
+santas.each do |one_santa|
+	one_santa.speak
+	one_santa.eat_milk_and_cookies("chocolate_chip_cookie")
+	puts ""
+end
 
-santas.celebrate_birthday = 1
-santas.get_mad_at = "Vixen"
+
 p santas
 
+santas[3].celebrate_birthday
+santas[1].get_mad_at = "Vixen"
 
+p santas
