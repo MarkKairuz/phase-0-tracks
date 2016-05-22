@@ -4,6 +4,13 @@
 
 # Define Santa Class
 class Santa
+
+	# Getter methods shorthand
+	attr_reader :age, :ethnicity, :reindeer_ranking
+
+	# Setter/Getter methods shorthand
+	attr_accessor :gender
+
 	# Initialize Santa
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa instance ..."
@@ -22,19 +29,6 @@ class Santa
 	# Eat and drink Santa
 	def eat_milk_and_cookies(cookie_type)
 		puts "That was a good #{cookie_type}!"
-	end
-
-	# Getter methods
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
-	def reindeer_ranking
-		@reindeer_ranking
 	end
 
 	# Setter methods
@@ -89,7 +83,7 @@ santas.each do |one_santa|
 	puts ""
 end
 
-# Drive one Santa's age up by 1 year.
+# Drive one Santa's age up by 1 year and check the age method.
 santas[1].celebrate_birthday
 puts "After celebrating the second Santa's birthday, their new age is now #{santas[1].age} year(s) old. Santa 3 is still #{santas[2].age} year(s) old."
 puts ""
@@ -102,3 +96,9 @@ puts ""
 
 # Check the ethnicity of a Santa.
 puts "Santa 4 ethnicity is #{santas[3].ethnicity}."
+puts ""
+
+# Check the gender method.
+puts "Santa 7 decided to change their gender in a clinic to:"
+p santas[6].gender = "none"
+puts ""
