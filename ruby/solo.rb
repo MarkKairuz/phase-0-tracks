@@ -47,6 +47,7 @@ class Droid
 	attr_accessor :communication, :color, :battery_charge
 
 	def initialize(droid_type, mobility_type, battery_charge)
+		@name = "undocumented"
 		@droid_type = droid_type
 		@mobility_type = mobility_type
 		@battery_charge = battery_charge
@@ -73,6 +74,7 @@ class Droid
 		if battery_charge.to_i <= 10
 			puts "The #{droid_type} droid plugs into a power source."
 			battery_charge = 100
+			puts "The battery percent charges to #{battery_charge} percent."
 		else
 			puts "The #{droid_type} droid has enough charge."
 		end
@@ -95,16 +97,26 @@ puts ""
 
 # User interface
 puts "Let's start a new list of droids. Whenever you feel you are finished, just enter 'done'."
-droids = []
-puts "What is your first droid's type?"
-droid_type_input = gets.chomp
-while droid_type_input.downcase != "done"
-	puts "What is your droid's type of transportation? (example: walk)"
-	droid_mobility_input = gets.chomp
-	puts "What is the current battery percentage does your droid have?"
-	droid_battery_input = gets.chomp.to_i
-	droids << Droid.new(droid_type_input, droid_mobility_input, droid_battery_input)
-
+droids = {}
+puts "What is your first droid's name?"
+name = gets.chomp
+while name.downcase != "done"
 	puts "What is your next droid's type? (type 'done' when finished)"
 	droid_type_input = gets.chomp
+	puts "What is your droid's type of transportation? (example: walk)"
+	droid_mobility_input = gets.chomp
+	puts "What is the current battery percentage does your droid have? (from 0 to 100)"
+	droid_battery_input = gets.chomp.to_i
+	droids[name] = Droid.new(droid_type_input, droid_mobility_input, droid_battery_input)
+	puts "What is your first droid's name?"
+	name = gets.chomp
+end
+p droids
+droids.each do |droid_iteration|
+	
+	# one_droid.speak
+	# one_droid.eat_milk_and_cookies("chocolate_chip_cookie")
+	# puts "Reindeer_ranking:"
+	# puts one_santa.reindeer_ranking
+	# puts ""
 end
