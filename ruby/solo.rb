@@ -86,6 +86,14 @@ class Droid
 			puts "The #{droid_type} droid has enough charge."
 		end
 	end
+
+	def about
+		puts "Droid type: #{@droid_type}"
+		puts "Mobility type: #{mobility_type}"
+		puts "Battery charge: #{battery_charge}%"
+		puts "Communication type: #{communication}"
+		puts "Color: #{color}"
+	end
 end
 
 R2D2 = Droid.new("Astromech", "rolls on wheels", 90)
@@ -100,6 +108,7 @@ C3PO.communication = "Humanoid"
 C3PO.speak("I am a translator droid. At your service!")
 C3PO.move("kitchen")
 C3PO.check_battery
+C3PO.about
 puts ""
 
 # User interface
@@ -107,49 +116,63 @@ puts "Let's start a new list of droids. Whenever you feel you are finished, just
 droids = {}
 puts "What is your first droid's name?"
 name = gets.chomp
+puts ""
 while name.downcase != "done"
 	puts "What is your droid's type?"
 	droid_type_input = gets.chomp
+	puts ""
 	puts "What is your droid's type of transportation? (example: walk)"
 	droid_mobility_input = gets.chomp
+	puts ""
 	puts "What is the current battery percentage does your droid have? (from 0 to 100)"
 	droid_battery_input = gets.chomp.to_i
 	droids[name] = Droid.new(droid_type_input, droid_mobility_input, droid_battery_input)
 	puts ""
-	puts "Here's the raw data of your droid:"
-	p droids[name]
-	puts ""
 	puts "Would you like to install a communication drive for your droid?"
 	purchase_communication = gets.chomp
+	puts ""
 	if (purchase_communication.downcase == "yes")||(purchase_communication == "ok")
 		puts "What type of communication would you like to have for your droid?"
 		droids[name].communication = gets.chomp
+		puts ""
 	end
 	puts "Would you like to paint your droid?"
 	paint_job = gets.chomp
+	puts ""
 	if (paint_job == "yes")||(paint_job == "ok")
 		puts "What color do you want for your droid?"
 		droids[name].color = gets.chomp
+		puts ""
 	end
+
 	p "Droid: Self diagnose and check if you need to charge."
 	droids[name].check_battery
 	puts ""
-	puts "--------------------------------"
+
+	puts "Tell the droid to say something."
+	words = gets.chomp
+	droids[name].speak(words)
+	puts ""
+
+	puts "Give the droid a place to go."
+	location = gets.chomp
+	droids[name].move(location)
+	puts "Looks like we are good to go!"
+
+	puts ""
+	puts "-----------------------------------------------------------"
 	puts "What is your next droid's name? (type 'done' when finished)"
 	name = gets.chomp
+
 end
-
-
-p droids
 puts ""
-
-
-
-droids.each do |droid_iteration|
-	
-	# one_droid.speak
-	# one_droid.eat_milk_and_cookies("chocolate_chip_cookie")
-	# puts "Reindeer_ranking:"
-	# puts one_santa.reindeer_ranking
-	# puts ""
+puts "=========================================="
+puts ""
+puts "Here's the information of all your droids:"
+puts ""
+droids.each do |key|
+	puts "Droid name: #{key[0]}"
+	i = "#{key[0]}"
+	droids[i].about
+	puts ""
 end
