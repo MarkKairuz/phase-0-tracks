@@ -47,7 +47,6 @@ class Droid
 	attr_accessor :communication, :color, :battery_charge
 
 	def initialize(droid_type, mobility_type, battery_charge)
-		@name = "undocumented"
 		@droid_type = droid_type
 		@mobility_type = mobility_type
 		@battery_charge = battery_charge
@@ -71,10 +70,18 @@ class Droid
 	end
 
 	def check_battery
-		if battery_charge.to_i <= 10
-			puts "The #{droid_type} droid plugs into a power source."
-			battery_charge = 100
-			puts "The battery percent charges to #{battery_charge} percent."
+		if battery_charge <= 10
+			if battery_charge <= 0
+				puts "The #{droid_type} droid malfunctions."
+				p "Looks like we have to charge the droid manualy ourselves. Ugh! Are we cavemen here? When did droids stop charging themselves?"
+				puts "User plugs the droid into a power source."
+				battery_charge = 100
+				puts "Moments later, the battery percent charges to #{battery_charge} percent."
+			else
+				puts "The #{droid_type} droid plugs into a power source."
+				battery_charge = 100
+				puts "Moments later, the battery percent charges to #{battery_charge} percent."
+			end
 		else
 			puts "The #{droid_type} droid has enough charge."
 		end
@@ -101,17 +108,43 @@ droids = {}
 puts "What is your first droid's name?"
 name = gets.chomp
 while name.downcase != "done"
-	puts "What is your next droid's type? (type 'done' when finished)"
+	puts "What is your droid's type?"
 	droid_type_input = gets.chomp
 	puts "What is your droid's type of transportation? (example: walk)"
 	droid_mobility_input = gets.chomp
 	puts "What is the current battery percentage does your droid have? (from 0 to 100)"
 	droid_battery_input = gets.chomp.to_i
 	droids[name] = Droid.new(droid_type_input, droid_mobility_input, droid_battery_input)
-	puts "What is your first droid's name?"
+	puts ""
+	puts "Here's the raw data of your droid:"
+	p droids[name]
+	puts ""
+	puts "Would you like to install a communication drive for your droid?"
+	purchase_communication = gets.chomp
+	if (purchase_communication.downcase == "yes")||(purchase_communication == "ok")
+		puts "What type of communication would you like to have for your droid?"
+		droids[name].communication = gets.chomp
+	end
+	puts "Would you like to paint your droid?"
+	paint_job = gets.chomp
+	if (paint_job == "yes")||(paint_job == "ok")
+		puts "What color do you want for your droid?"
+		droids[name].color = gets.chomp
+	end
+	p "Droid: Self diagnose and check if you need to charge."
+	droids[name].check_battery
+	puts ""
+	puts "--------------------------------"
+	puts "What is your next droid's name? (type 'done' when finished)"
 	name = gets.chomp
 end
+
+
 p droids
+puts ""
+
+
+
 droids.each do |droid_iteration|
 	
 	# one_droid.speak
