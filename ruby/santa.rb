@@ -25,8 +25,12 @@ class Santa
 	end
 
 	# Getter methods
-	def celebrate_birthday
-		@age += 1
+	def age
+		@age
+	end
+
+	def ethnicity
+		@ethnicity
 	end
 
 	def reindeer_ranking
@@ -38,6 +42,9 @@ class Santa
 		@age = new_age
 	end
 
+	def celebrate_birthday
+		@age += 1
+	end
 
 	def get_mad_at=(bad_reindeer)
 		@reindeer_ranking.delete(bad_reindeer)
@@ -62,8 +69,7 @@ santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 santas << Santa.new("N/A", "N/A")
 # # p santas
 
-# santas = Santa.new("male", "mixed")
-
+# # Test 2
 # santas = []
 # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 # example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
@@ -83,10 +89,16 @@ santas.each do |one_santa|
 	puts ""
 end
 
+# Drive one Santa's age up by 1 year.
+santas[1].celebrate_birthday
+puts "After celebrating the second Santa's birthday, their new age is now #{santas[1].age} year(s) old. Santa 3 is still #{santas[2].age} year(s) old."
+puts ""
 
-p santas
+# Drive one of the Santas to get mad at a reindeer.
+puts "The first Santa got mad at Vixen. This Sant's new oredered list is now:"
+santas[0].get_mad_at = "Vixen"
+puts santas[0].reindeer_ranking
+puts ""
 
-santas[3].celebrate_birthday
-santas[1].get_mad_at = "Vixen"
-
-p santas
+# Check the ethnicity of a Santa.
+puts "Santa 4 ethnicity is #{santas[3].ethnicity}."
