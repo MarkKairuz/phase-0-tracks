@@ -22,7 +22,7 @@ class Santa
 
 	# Speak Santa
 	def speak
-		puts "The #{@gender} #{@ethnicity} santa says:"
+		puts "The #{@age} year old #{@gender} #{@ethnicity} santa says:"
 		puts "Ho, ho, ho! Haaaappy holidays!"
 	end
 
@@ -55,35 +55,34 @@ end
 # Test the code
 santas = []
 santas << Santa.new("agender", "black")
+santas[0].change_age = rand(140)
 santas << Santa.new("female", "Latino")
+santas[1].change_age = rand(140)
 santas << Santa.new("bigender", "white")
+santas[2].change_age = rand(140)
 santas << Santa.new("male", "Japanese")
+santas[3].change_age = rand(140)
 santas << Santa.new("female", "prefer not to say")
+santas[4].change_age = rand(140)
 santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+santas[5].change_age = rand(140)
 santas << Santa.new("N/A", "N/A")
+santas[6].change_age = rand(140)
 # # p santas
 
-# # Test 2
-# santas = []
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-# example_genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i])
-# end
+# Add more Santas easier with this:
+additional_genders = ["male", "female", "transgender", "bisexual", "agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "unknown", "asexual", "universal", "blip-blop-bloop"]
+additional_ethnicities = ["green", "red", "blue", "orange", "dinosaur", "black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A", "Filipino", "Martian", "Being", "Fish"]
+(additional_genders.length).times do |i|
+  santas << Santa.new(additional_genders[i], additional_ethnicities[i])
+  santas[i+7].change_age = rand(140)
+end
 # p santas
 
 
-puts ""
-puts "----------------------"
-puts "Here comes the Santas:"
-puts ""
-santas.each do |one_santa|
-	one_santa.speak
-	one_santa.eat_milk_and_cookies("chocolate_chip_cookie")
-	puts ""
-end
 
 # Drive one Santa's age up by 1 year and check the age method.
+puts ""
 santas[1].celebrate_birthday
 puts "After celebrating the second Santa's birthday, their new age is now #{santas[1].age} year(s) old. Santa 3 is still #{santas[2].age} year(s) old."
 puts ""
@@ -102,3 +101,16 @@ puts ""
 puts "Santa 7 decided to change their gender in a clinic to:"
 p santas[6].gender = "none"
 puts ""
+
+puts ""
+puts "----------------------"
+puts "Here comes the Santas:"
+puts ""
+
+santas.each do |one_santa|
+	one_santa.speak
+	one_santa.eat_milk_and_cookies("chocolate_chip_cookie")
+	puts "Reindeer_ranking:"
+	puts one_santa.reindeer_ranking
+	puts ""
+end
