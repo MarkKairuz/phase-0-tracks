@@ -6,16 +6,19 @@
 # EXPLANATION OF require_relative
 #
 #
-require_relative 'state_data'
-
+require_relative 'state_data' # Allows link to stat_data.rb file.
+                              # Required for the utilization of the state_data.rb to be share by my_solution.rb 
+                              # Require is more local, while   
 class VirusPredictor
 
+  # Initializion of the new instance of the class. Initialize the state, population and population density variables.
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # Method calls predicted_deaths and speed_of_spread methods.
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +26,7 @@ class VirusPredictor
 
   private
 
+  # Prints the statement of the number of deaths per state.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +45,7 @@ class VirusPredictor
 
   end
 
+  # Prints the speed of spread portion of the printed sentence with the speed in months.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -82,6 +87,9 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
-
+STATE_DATA.each do |statename|
+  test = VirusPredictor.new(statename[0], statename[1][:population_density], statename[1][:population])
+  test.virus_effects
+end
 #=======================================================================
 # Reflection Section
