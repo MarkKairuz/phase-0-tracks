@@ -2,8 +2,8 @@
 #this data is updated every year with estimates from a 10 year census
 
 
-STATE_DATA = {
-  "Alabama" => {population_density: 94.65, population: 4822023},
+STATE_DATA = { # Big hash for all the states and population detail. The string is the key.
+  "Alabama" => {population_density: 94.65, population: 4822023}, #  Nested hash uses symbols as keys.
   "Alaska" => {population_density: 1.1111, population: 731449},
   "Arizona" => {population_density: 57.05, population: 6553255},
   "Arkansas" => {population_density: 56.43, population: 2949131},
