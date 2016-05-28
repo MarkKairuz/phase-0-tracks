@@ -1,15 +1,24 @@
+/*	7.2 Pairing session
+	Mark Kairuz
+	I paired with Prajay	*/
+
 var colors = ['blue', 'red', 'green', 'yellow'];
 
 var names = ['Ed', 'Bob', 'Carl', 'Ben'];
+
+var horse = {};
 
 colors.push('purple');
 names.push('Bill');
 
 for (var i = 0; i < names.length; i++) {
-
-	var horse = {name: names[i], color: colors[i]};
+	horse[names[i]] = colors[i];						//This is one way of putting it
+/*	var horse = {name: names[i], color: colors[i]};		//This is another way of putting it
 	console.log(horse);
+*/
 }
+console.log(horse);
+console.log("-----------------------------")
 
 
 
