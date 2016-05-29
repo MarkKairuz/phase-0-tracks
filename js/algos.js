@@ -1,3 +1,5 @@
+// algos.js
+// 7.3
 // Mark Kairuz
 
 
@@ -107,5 +109,8 @@ console.log("Answer: " + Key_Value_Match(first_object2, second_object2) + "\n");
 
 
 // test the random words generator
-console.log(Random_Test_Data(Math.floor((Math.random() * 10) +1)) + " is the longest word.");
+// include a for loop to generate results 10 times
+for (var i=0; i<10; i++){
+	console.log(Random_Test_Data(Math.floor((Math.random() * 10) +1)) + " is the longest word.\n");
+}
 
