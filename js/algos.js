@@ -55,7 +55,7 @@ phrase_array2 = ["Apple Device","Android Mobile","Windows Phone"];
 console.log("The longest phrase of [" + phrase_array2 + "] is: " + Longest_Phrase(phrase_array2) + ".");
 
 phrase_array3 = ["one too many","two of a king","three is a crowd"];
-console.log("The longest phrase of [" + phrase_array3 + "] is: " + Longest_Phrase(phrase_array3) + ".");
+console.log("The longest phrase of [" + phrase_array3 + "] is: " + Longest_Phrase(phrase_array3) + ".\n");
 
 
 first_object = {name: "Steven", age: 54};
@@ -63,6 +63,12 @@ second_object = {name: "Tamir", age: 54};
 console.log("Do these have similar key-value set?: ");
 console.log(first_object);
 console.log(second_object);
-console.log("Answer: " + Key_Value_Match(first_object, second_object));
+console.log("Answer: " + Key_Value_Match(first_object, second_object) + "\n");
 
+first_object2 = {name: "Sean", age: 24};
+second_object2 = {cat: "Sean", age: 4};
+console.log("Do these have similar key-value set?: ");
+console.log(first_object2);
+console.log(second_object2);
+console.log("Answer: " + Key_Value_Match(first_object2, second_object2) + "\n");
 
