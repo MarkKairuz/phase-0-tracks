@@ -1,0 +1,48 @@
+
+    1)	Display the information in one table (either table is fine).
+    
+SELECT * FROM house_items;
+
+1|Bed|1|true|1
+2|Dresser|2|false|1
+3|Toothbrush|2|true|3
+4|Toothpaste|1|true|3
+5|Couch|1|false|2
+6|TV|1|true|2
+7|Mouthwash|1|true|3
+
+
+    2)	Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE house_items SET available="true" WHERE name="Couch";
+
+
+    3)	Display the information in both tables using one query.
+
+SELECT * FROM house_items, rooms WHERE house_items.room_id = rooms.id;
+
+1|Bed|1|true|1|1|Bedroom
+2|Dresser|2|false|1|1|Bedroom
+3|Toothbrush|2|true|3|3|Bathroom
+4|Toothpaste|1|true|3|3|Bathroom
+5|Couch|1|true|2|2|Living Room
+6|TV|1|true|2|2|Living Room
+7|Mouthwash|1|true|3|3|Bathroom
+
+    
+    4)	Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT house_items.name, rooms.name FROM house_items JOIN rooms ON house_items.room_id = rooms.id;
+
+Bed|Bedroom
+Dresser|Bedroom
+Toothbrush|Bathroom
+Toothpaste|Bathroom
+Couch|Living Room
+TV|Living Room
+Mouthwash|Bathroom
+
+    
+    5)	Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM house_items WHERE name="Mouthwash";
