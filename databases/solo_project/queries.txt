@@ -46,3 +46,27 @@ Mouthwash|Bathroom
     5)	Delete an item that meets some condition (you can choose a condition that makes sense).
 
 DELETE FROM house_items WHERE name="Mouthwash";
+
+
+	Research on your own.
+
+http://www.w3schools.com/sql/sql_join.asp
+
+SELECT house_items.name, rooms.name, house_items.quantity FROM house_items INNER JOIN rooms ON house_items.room_id=rooms.id;
+
+Bed|Bedroom|1
+Dresser|Bedroom|2
+Toothbrush|Bathroom|2
+Toothpaste|Bathroom|1
+Couch|Living Room|1
+TV|Living Room|1
+
+SELECT house_items.name, rooms.name FROM house_items LEFT JOIN rooms ON house_items.room_id=rooms.id ORDER BY house_items.name;
+
+Bed|Bedroom
+Couch|Living Room
+Dresser|Bedroom
+TV|Living Room
+Toothbrush|Bathroom
+Toothpaste|Bathroom
+
