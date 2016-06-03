@@ -1,0 +1,44 @@
+
+INPUT
+SELECT * FROM reviews, users, businesses WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id;
+
+OUTPUT:
+1|5|Amazing service|2|6|6|Merryl|Streepman|2|Amir Towing
+2|3|The service was so-so|4|3|3|Angela|Jolie|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|2|Mandy|Kaling|6|Sushi World
+
+
+INPUT
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM reviews, users, businesses WHERE reviews.user_id = users.id AND reviews.business_id = businesses.id;
+
+OUTPUT
+Merryl|Streepman|Amir Towing|5|Amazing service
+Angela|Jolie|Lotus Yoga|3|The service was so-so
+Mandy|Kaling|Sushi World|1|Sushi was not good.
+
+
+INPUT
+SELECT * FROM reviews, users, businesses WHERE businesses.name="Lotus Yoga";
+
+OUTPUT
+1|5|Amazing service|2|6|1|Bradford|Pitt|4|Lotus Yoga
+1|5|Amazing service|2|6|2|Mandy|Kaling|4|Lotus Yoga
+1|5|Amazing service|2|6|3|Angela|Jolie|4|Lotus Yoga
+1|5|Amazing service|2|6|4|Steven|Wonder|4|Lotus Yoga
+1|5|Amazing service|2|6|5|Holly|Berry|4|Lotus Yoga
+1|5|Amazing service|2|6|6|Merryl|Streepman|4|Lotus Yoga
+1|5|Amazing service|2|6|7|Denzel|George|4|Lotus Yoga
+2|3|The service was so-so|4|3|1|Bradford|Pitt|4|Lotus Yoga
+2|3|The service was so-so|4|3|2|Mandy|Kaling|4|Lotus Yoga
+2|3|The service was so-so|4|3|3|Angela|Jolie|4|Lotus Yoga
+2|3|The service was so-so|4|3|4|Steven|Wonder|4|Lotus Yoga
+2|3|The service was so-so|4|3|5|Holly|Berry|4|Lotus Yoga
+2|3|The service was so-so|4|3|6|Merryl|Streepman|4|Lotus Yoga
+2|3|The service was so-so|4|3|7|Denzel|George|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|1|Bradford|Pitt|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|2|Mandy|Kaling|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|3|Angela|Jolie|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|4|Steven|Wonder|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|5|Holly|Berry|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|6|Merryl|Streepman|4|Lotus Yoga
+3|1|Sushi was not good.|6|2|7|Denzel|George|4|Lotus Yoga
