@@ -48,17 +48,21 @@ def add_code(cheatsheet_db, language, type, code, comment)
 end
 
 # Subtract a code from sheet
-
+def delete_code(cheatsheet_db, language, delete_by, delete_this)
+  cheatsheet_db.execute("DELETE FROM #{language} WHERE #{delete_by}=#{delete_this}")
+end
 
 # View a code from sheet
 
 
-
+# Begin the User inputs
 puts "What would you like to do? Add, remove or view. Enter done when finished."
 input = gets.chomp
 
+# Initiate loop
 while input.downcase != "done" do
 
+	# Add a line
 	if input.downcase == "add"
 		puts "What language?"
 		language = gets.chomp
@@ -70,8 +74,17 @@ while input.downcase != "done" do
 		comment = gets.chomp
 		add_code(cheatsheet_db, language, type, code, comment)
 
+	# Delete a line
 	elsif input.downcase == "remove"
-		puts "remove"
+		puts "What language?"
+		language = gets.chomp
+		puts "Deleting by using ID, type, code or comment?"
+		delete_by = gets.chomp
+		puts "What would you like to delete?"
+		delete_this = gets.chomp
+		delete_code(cheatsheet_db, language, delete_by, delete_this)
+
+
 	elsif input.downcase == "view"
 		puts "view"
 	end
