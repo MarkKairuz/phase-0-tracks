@@ -53,7 +53,9 @@ def delete_code(cheatsheet_db, language, delete_by, delete_this)
 end
 
 # View a code from sheet
-
+def view_code(cheatsheet_db, language, look_for)
+  p cheatsheet_db.execute("SELECT * FROM #{language} WHERE id='#{look_for}' OR type='#{look_for}' OR code='#{look_for}' OR comment='#{look_for}'")
+end
 
 # Begin the User inputs
 puts "What would you like to do? Add, remove or view. Enter done when finished."
@@ -78,15 +80,20 @@ while input.downcase != "done" do
 	elsif input.downcase == "remove"
 		puts "What language?"
 		language = gets.chomp
-		puts "Deleting by using ID, type, code or comment?"
+		puts "What category are you deleting by? ID, type, code or comment?"
 		delete_by = gets.chomp
 		puts "What would you like to delete?"
 		delete_this = gets.chomp
 		delete_code(cheatsheet_db, language, delete_by, delete_this)
 
-
+	# View
 	elsif input.downcase == "view"
-		puts "view"
+		puts "What language?"
+		language = gets.chomp
+		puts "What would you like to look for?"
+		look_for = gets.chomp
+		view_code(cheatsheet_db, language, look_for)
+
 	end
 	puts "What would you like to do? Add, remove or view. Enter done when finished."
 	input = gets.chomp
