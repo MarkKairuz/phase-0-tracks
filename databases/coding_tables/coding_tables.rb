@@ -95,6 +95,7 @@ while input.downcase != "done" do
 		view_code(cheatsheet_db, language, look_for)
 
 	end
+	puts ""
 	puts "What would you like to do? Add, remove or view. Enter done when finished."
 	input = gets.chomp
 end
