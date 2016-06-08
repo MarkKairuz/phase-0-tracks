@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $(this).hide();
+    });
+    $("button").click(function(){
+	    $("div").animate({left: '300px'});
+    });
+    $("button").click(function(){
+	    $("#img1").fadeOut();
+    });
+    $("#btn1").click(function(){
+        $("p").append("<img src=Pac_Man.jpg>");
+    });
+
+});
+</script>
+
+<script> 
+	$(document).ready(function(){
+
+	});
+</script> 
+
+<script>
+	$(document).ready(function(){
+
+	});
+</script>
+
+
+</head>
+<body>
+
+<button><img src="Click-Here.png"></button>
+
+<div style="position:absolute;"><img id="div1" src="Alien.jpg" style="z-index:-2;"></div>
+
+<img id="img1" src="Pac_Man.jpg" width = 20% height =20% style="position:static;z-index:-1;">
+
+<p>Where's PacMan?</p>
+
+<button id="btn1">Let's Go PacMan!</button>
+
+</body>
+</html>
+
+
+
+
+
+
+
