@@ -1,0 +1,15 @@
+
+
+    Is Sinatra the only web app library in Ruby? What are some others?
+
+Watir and Authem
+
+
+    Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+
+No. MySQL, Oracle, PostgreSqL and Microsoft SQL Server.
+
+
+    What is meant by the term web stack?
+
+It's a solution stack or a software stack. It's a bunch of software subsystems that create a whole software.
